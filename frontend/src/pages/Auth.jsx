@@ -5,10 +5,11 @@ Alfie Staunton
 
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate }from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Auth() {
     //toggle between login and register modes
+    const navigate = useNavigate();
     const [isLogin, setIsLogin] = useState(true);
 
     //form input
@@ -17,7 +18,7 @@ function Auth() {
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
 
-    const navigate = useNavigate();
+
 
     //handle form submission to express backend
     const handleSubmit = async (e) => {
@@ -33,7 +34,15 @@ function Auth() {
             if (isLogin) {
                 //save secure token to browser storage
                 localStorage.setItem('token', response.data.token);
+
+                //extract username or fallback to email
+                const extractedUsername = response.data.user?.username || email.split('@')[0];
+
+                //save extract
+                localStorage.setItem('user', JSON.stringify({ username: extractedUsername}));
+
                 setMessage('Login successful! Redirecting...');
+                navigate('/Dashboard'); //redirect to dashboard after successful login
 
                 //temp consol log until dashboard complete
                 console.log('Logged in user info:', response.data.user);
