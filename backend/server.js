@@ -21,6 +21,18 @@ app.use(express.json());
 //mount auth routes
 app.use('/api/auth', authRoutes);
 
+//mount sites routes
+app.use('/api/sites', require('./routes/sites'));
+
+//species
+app.use('/api/species', require('./routes/species'));
+
+//sessions
+app.use('/api/sessions', require('./routes/sessions'));
+
+//sightings
+app.use('/api/sightings', require('./routes/sightings'));
+
 //test backend working
 app.get('/', async (req, res) => {
     res.send('Dúlra API backend is running successfully.');
