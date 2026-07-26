@@ -5,30 +5,11 @@ Alfie Staunton
 
 import React, { useState, useEffect } from "react";
 import {
-  Bell,
-  Plus,
-  ChevronRight,
-  BarChart3,
-  Clock,
-  Map,
-  Settings,
-  LogOut,
-} from "lucide-react";
+  Bell, Plus, ChevronRight, BarChart3, Clock, Map, Settings, LogOut} from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-function Dashboard() {
-  //safe nav hook
-  let navigate;
-  try {
-    navigate = useNavigate();
-  } catch (e) {
-    console.warn(
-      "useNavigate failed (likely not inside a Router). Using window.location fallback.",
-    );
-    navigate = (path) => {
-      window.location.href = path;
-    };
-  }
+export default function Dashboard() {
+  const navigate = useNavigate();
 
   //state setup
   const [userData, setUserData] = useState({ username: "User", initials: "U" });
@@ -295,4 +276,4 @@ function Dashboard() {
     </div>
   );
 }
-export default Dashboard;
+

@@ -3,7 +3,7 @@ Alfie Staunton
 11.07.26
 */
 
-/** @type {import('tailwindcss').Config} */
+/** @type {import("tailwindcss").Config} */
 export default {
   content: [
     "./index.html",

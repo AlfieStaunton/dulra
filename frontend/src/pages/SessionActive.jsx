@@ -20,6 +20,7 @@ export default function SessionActive() {
   const [cameraLoading, setCameraLoading] = useState(false);
   const videoRef = useRef(null);
 
+
  //butterfly species
   const [speciesList, setSpeciesList] = useState([
     { id: 1, common:"Speckled Wood", latin: "Pararge Aegeria", count: 0 },
@@ -155,13 +156,14 @@ export default function SessionActive() {
   return (
     <div className="min-h-screen bg-[#f0f7f2] font-['Nunito'] text-[#0f2318] flex justify-center">
       <div className="w-full max-w-[390px] bg-white shadow-2xl min-h-screen flex flex-col relative">
-        {/*Sticky Header*/}
-        <div className=" sticky top-0 bg-white z-10 border-b border-[#1a5c35]/10 px-4 py-3 flex items-center justify-between">
+        {/* Header */}
+        <div className="p-6">
           <button
-            onClick={() => navigate("/survey-select")}
-            className=" flex items-center gap-1 text-sm text-gray-500 hover:text-[#1a5c35] transition-colors"
+            onClick={() => navigate("/dashboard")}
+            className="flex items-center gap-2 text-sm text-gray-500 mb-6 hover:text-[#f0f7f2] transition-colors"
           >
-            <ArrowLeft size={16} /> Back
+            <ArrowLeft size={16} />
+            Back
           </button>
           <span className="font-bold text-xs text-[#0f2318]">
             {" "}
@@ -276,7 +278,7 @@ export default function SessionActive() {
         </div>
 
         {/* footer bar*/}
-        <div className="absolute bottom-0 left-0 w-full bg-white border-t border-gray-100 p-4 flex items-center gap-3 shadow[0_-4px_20pxrgba(0,0,0,0.05)]">
+        <div className="absolute bottom-0 left-0 w-full bg-white border-t border-gray-100 p-4 flex items-center gap-3 shadow[0_-4px_20px_rgba(0,0,0,0.05)]">
           {photos.length > 0 && (
             <div className="flex gap-2 overflow-x-auto max-w-[140px] scrollbar-hide">
               {photos.map((p, idx) => (

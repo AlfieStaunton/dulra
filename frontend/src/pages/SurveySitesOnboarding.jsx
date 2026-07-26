@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { MapPin, X, HelpCircle, ArrowRight } from "lucide-react";
 import axios from "axios";
 
-function SurveySitesOnboarding() {
+export default function SurveySiteOnboarding() {
   const navigate = useNavigate();
   const [siteName, setSiteName] = useState("");
   const [coordinates, setCoordinates] = useState("");
@@ -105,7 +105,7 @@ function SurveySitesOnboarding() {
   };
 
   return (
-    <div className="min-h-screen  bg-gradient-to-br from-[#0f2318] to [#1a5c35] font-['Nunito'] flex flex-col items-center">
+    <div className="min-h-screen  bg-gradient-to-br from-[#0f2318] to-[#1a5c35] font-['Nunito'] flex flex-col items-center">
       <div className="w-full max-w-[390px] min-h-screen flex flex-col relative px-6 py-12">
         {/* Header */}
         <div className="mb-8">
@@ -116,7 +116,7 @@ function SurveySitesOnboarding() {
             Your Survey Sites
           </h1>
           <p className="text-white/70 text-sm leading-relaxed">
-            Add your gardens or locations where you'll be monitoring
+            Add your gardens or locations where you"ll be monitoring
             butterflies. Dont stress! You can always add these later!
           </p>
         </div>
@@ -234,4 +234,3 @@ function SurveySitesOnboarding() {
   );
 }
 
-export default SurveySiteOnboarding;

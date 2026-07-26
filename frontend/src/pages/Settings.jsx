@@ -5,18 +5,7 @@ Alfie Staunton
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import {
-  ArrowLeft,
-  MapPin,
-  Plus,
-  X,
-  Pencil,
-  Check,
-  User,
-  Bell,
-  Shield,
-  ChevronRight,
-} from "lucide-react";
+import { ArrowLeft, MapPin, Plus, X, Pencil, Check, User, Bell, Shield, ChevronRight} from "lucide-react";
 
 export default function Settings() {
   const navigate = useNavigate();
@@ -28,7 +17,7 @@ export default function Settings() {
   //sites states
   const [sites, setSites] = useState([]);
   const [siteName, setSiteName] = useState("");
-  const [coordinates, setCordinates] = useState("");
+  const [coordinates, setCoordinates] = useState("");
 
   //new state - edit mode
   const [editingId, setEditingId] = useState(null);

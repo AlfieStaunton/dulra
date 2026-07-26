@@ -29,7 +29,7 @@ export default function SurveySelect() {
             Select the type of biodiversity monitoring you like to do.
           </p>
 
-          {/* Survey Card */}
+          {/* Survey card */}
           <div className="border-2 border-[#1a5c35] rounded-3xl p-5 bg-[#f0f7f2] shadow-sm">
             <div className="flex items-center gap-4 mb-4">
               <div className="bg-[#1a5c35] p-4 rounded-2xl text-white">
