@@ -8,13 +8,16 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //app pages
 import Auth from "./pages/Auth";
-import Dashboard from "./pages/Dashboard";
 import SurveySitesOnBoarding from "./pages/SurveySitesOnBoarding";
+import Dashboard from "./pages/Dashboard";
 import Settings from "./pages/Settings";
+import Guides from "./pages/Guides";
 import SurveySelect from "./pages/SurveySelect";
 import SessionActive from "./pages/SessionActive";
 import SessionReview from "./pages/SessionReview";
 import SessionConditions from "./pages/SessionConditions";
+
+
 
 export default function App() {
   return (
@@ -22,10 +25,10 @@ export default function App() {
       <Routes>
         {/* App opens up on login/reg*/}
         <Route path="/" element={<Auth />} />
-        {/* onboarding page automatic redirection after reg*/}
         <Route path="/onboarding" element={<SurveySitesOnBoarding />} />
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/guides" element={<Guides />} />
         <Route path="/survey-select" element={<SurveySelect />} />
         <Route path="/session-active" element={<SessionActive />} />
         <Route path="/session-review" element={<SessionReview />} />
@@ -34,4 +37,3 @@ export default function App() {
     </Router>
   );
 }
-

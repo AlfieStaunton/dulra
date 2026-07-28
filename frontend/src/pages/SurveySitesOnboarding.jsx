@@ -160,7 +160,8 @@ export default function SurveySiteOnboarding() {
                     <li>Open up Google Maps.</li>
                     <li>Tap and hold or right-click on your garden.</li>
                     <li>
-                      Tap or click on numbers at the top (e.g., 51.5074, -0.1278) to copy them!
+                      Tap or click on numbers at the top (e.g., 51.5074,
+                      -0.1278) to copy them!
                     </li>
                   </ol>
 
@@ -232,4 +233,3 @@ export default function SurveySiteOnboarding() {
     </div>
   );
 }
-

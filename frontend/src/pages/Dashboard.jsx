@@ -17,6 +17,7 @@ import {
   CloudSun,
   Activity,
   Calendar,
+  BookOpen,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -269,6 +270,21 @@ export default function Dashboard() {
                 </p>
               </div>
             )}
+
+            {/* guides*/}
+            <button
+            onClick={() => navigate("/guides")}
+            className="w-full mt-6 bg-[#f0f7f2] border border-[#1a5c35]/20 p-4 rounded-2xl flex items-center gap-4 hover:border-[#1a5c35]"
+            >
+              <div className="p-2 bg-white rounded-xl text-[#1a5c35]">
+                <BookOpen size={20} />
+              </div>
+              <div className="text-left">
+                <p className="font-bold tex-sm text-[#0f2318]">Survey Guides</p>
+                <p className="text-[10px] text-[#4d7460]"> Learn to identify and record wildlife </p>
+              </div>
+            </button>
+
           </div>
         </div>
       </div>

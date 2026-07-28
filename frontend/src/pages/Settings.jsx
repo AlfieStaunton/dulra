@@ -201,7 +201,7 @@ export default function Settings() {
               {userData.initials}
             </div>
             <div>
-              <h2 className="flex items-center gap-3">{userData.username}</h2>
+              <h2 className="flex items-center gap-3 text-white ">{userData.username}</h2>
               <p className="text-white/60 text-xs mt-1">Member since 2026</p>
             </div>
           </div>
