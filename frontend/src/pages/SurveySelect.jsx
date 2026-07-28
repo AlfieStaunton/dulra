@@ -4,7 +4,7 @@ Alfie Staunton
 
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, Butterfly, Clock, ChevronRight } from "lucide-react";
+import { ArrowLeft, Clock, ChevronRight } from "lucide-react";
 
 export default function SurveySelect() {
   const navigate = useNavigate();
@@ -33,13 +33,13 @@ export default function SurveySelect() {
           <div className="border-2 border-[#1a5c35] rounded-3xl p-5 bg-[#f0f7f2] shadow-sm">
             <div className="flex items-center gap-4 mb-4">
               <div className="bg-[#1a5c35] p-4 rounded-2xl text-white">
-                <Butterfly size={24} />
+                🦋
               </div>
               <div>
                 <h3 className="font-bold text-[#0f2318]">
                   Garden Butterfly Monitoring
                 </h3>
-                <p ClassName="text-xs text-[#4d7460]">
+                <p className="text-xs text-[#4d7460]">
                   {" "}
                   National Biodiversity Data Centre Ireland
                 </p>

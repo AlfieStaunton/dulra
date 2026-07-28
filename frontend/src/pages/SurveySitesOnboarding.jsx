@@ -45,7 +45,7 @@ export default function SurveySiteOnboarding() {
 
   const handleAddSite = async (e) => {
     e.preventDefault();
-    if (siteName.trim() || !isValidCoords(coordinates)) return;
+    if (!siteName.trim() || !isValidCoords(coordinates)) return;
 
     const [latitude, longitude] = coordinates
       .split(",")
@@ -124,7 +124,7 @@ export default function SurveySiteOnboarding() {
         {/* Add survey site Form */}
         <form
           onSubmit={handleAddSite}
-          className="bg-white/5 border-2 border-dashed border-white/10 rounded-2xl p-5 mb-8 backdrop-blur-md"
+          className="bg-white/5 border-2 border-dashed border-white/10 rounded-2xl p-5 mb-8 backdrop-blur-md relative z-20"
         >
           <div className="flex flex-col gap-4">
             <input
@@ -154,14 +154,13 @@ export default function SurveySiteOnboarding() {
 
               {/* Help popup */}
               {showHelp && (
-                <div className="absolute top-14 right-0  w-64m bg-white text-[#0f2318] rounded-xl p-4 shadow-xl z-10 text-sm">
+                <div className="absolute bottom-full mb-2 right-0  w-64 bg-white text-[#0f2318] rounded-xl p-4 shadow-xl z-50 text-xs">
                   <p className="font-bold mb-2">How to get coordinates:</p>
                   <ol className="list-decimal pl-4 space-y-1 text-[#4d7460]">
                     <li>Open up Google Maps.</li>
                     <li>Tap and hold or right-click on your garden.</li>
                     <li>
-                      Tap or click on numbers at the top (e.g., 51.5074,
-                      -0.1278) to copy them!
+                      Tap or click on numbers at the top (e.g., 51.5074, -0.1278) to copy them!
                     </li>
                   </ol>
 
@@ -214,7 +213,7 @@ export default function SurveySiteOnboarding() {
         </div>
 
         {/* Skip to dashboard*/}
-        <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-[#0f2318] to-transparent">
+        <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-[#0f2318] to-transparent z-0">
           <button
             onClick={() => navigate("/dashboard")}
             className="w-full bg-white text-[#1a5c35] py-4 rounded-full font-bold flex items-center justify-center gap-2 shadow-lg mb-3 hover:bg-[#f0f7f2] transition-colors"

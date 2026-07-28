@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
         `;
 
     //excecute query
-    const [species] = await db.promise().query(query);
+    const [species] = await db.query(query);
 
     //results to frontend
     res.status(200).json(species);

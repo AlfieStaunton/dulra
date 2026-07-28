@@ -1,4 +1,4 @@
-/*SurveySelect.jsx
+/*SessionActive.jsx
 Alfie Staunton
 20.07.26*/
 
@@ -20,31 +20,45 @@ export default function SessionActive() {
   const [cameraLoading, setCameraLoading] = useState(false);
   const videoRef = useRef(null);
 
-
- //butterfly species
+  //butterfly species
   const [speciesList, setSpeciesList] = useState([
-    { id: 1, common:"Speckled Wood", latin: "Pararge Aegeria", count: 0 },
+    { id: 1, common: "Speckled Wood", latin: "Pararge Aegeria", count: 0 },
     { id: 2, common: "Painted Lady", latin: "Vanessa Cardui", count: 0 },
     { id: 3, common: "Large White", latin: "Pieris Brassicae", count: 0 },
     { id: 4, common: "Green-veined White", latin: "Pieris Napi", count: 0 },
-    { id: 5, common: "Small White", latin:"Pieris Rapae", count: 0 },
+    { id: 5, common: "Small White", latin: "Pieris Rapae", count: 0 },
     { id: 6, common: "Orange-tip", latin: "Anthocharis Cardamines", count: 0 },
     { id: 7, common: "Meadow Brown", latin: "Maniola Jurtina", count: 0 },
     { id: 8, common: "Holly Blue", latin: "Celastrina Argiolus", count: 0 },
     { id: 9, common: "Red Admiral", latin: "Vanessa Atalanta", count: 0 },
     { id: 10, common: "Ringlet", latin: "Aphantopus Hyperantus", count: 0 },
-    { id: 11,common: "Small Tortoiseshell", latin: "Aglais Urticae",count: 0,},
-    { id: 12, common: "Peacock", latin: "Aglais Io", count: 0},
+    {
+      id: 11,
+      common: "Small Tortoiseshell",
+      latin: "Aglais Urticae",
+      count: 0,
+    },
+    { id: 12, common: "Peacock", latin: "Aglais Io", count: 0 },
     { id: 13, common: "Common Blue", latin: "Polyommatus Icarus", count: 0 },
     { id: 14, common: "Wood White", latin: "Leptidea Sinapis", count: 0 },
     { id: 15, common: "Comma", latin: "Polygonia C-album", count: 0 },
-    { id: 16, common: "Brimstone", latin:"Gonepteryx Rhamni", count: 0 },
+    { id: 16, common: "Brimstone", latin: "Gonepteryx Rhamni", count: 0 },
     { id: 17, common: "Small Copper", latin: "Lycaena Phlaeas", count: 0 },
-    { id: 18,common: "Silver-washed Fritillary",latin: "Argynnis Paphia",count: 0},
+    {
+      id: 18,
+      common: "Silver-washed Fritillary",
+      latin: "Argynnis Paphia",
+      count: 0,
+    },
     { id: 19, common: "Wall", latin: "Lasiommata Megera", count: 0 },
     { id: 20, common: "Essex Skipper", latin: "Thymelicus Lineola", count: 0 },
     { id: 21, common: "Small Heath", latin: "Coenonympha Pamphilus", count: 0 },
-    { id: 22,common: "Unidentified Butterfly",latin: "Unidentified Butterfly",count: 0},
+    {
+      id: 22,
+      common: "Unidentified Butterfly",
+      latin: "Unidentified Butterfly",
+      count: 0,
+    },
   ]);
 
   //handle timer
@@ -277,8 +291,8 @@ export default function SessionActive() {
           })}
         </div>
 
-        {/* footer bar*/}
-        <div className="absolute bottom-0 left-0 w-full bg-white border-t border-gray-100 p-4 flex items-center gap-3 shadow[0_-4px_20px_rgba(0,0,0,0.05)]">
+        {/* footer */}
+        <div className="absolute bottom-0 left-0 w-full bg-white border-t border-gray-100 p-4 flex items-center gap-3 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
           {photos.length > 0 && (
             <div className="flex gap-2 overflow-x-auto max-w-[140px] scrollbar-hide">
               {photos.map((p, idx) => (

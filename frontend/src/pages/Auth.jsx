@@ -84,10 +84,6 @@ export default function Auth() {
         <div className="flex flex-col items-center text-center mb-8">
           <div className="relative w-20 h-20 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl flex items-center justify-center mb-4 shadow-xl">
             <Leaf size={40} className="text-[#a3dpb8]"/>
-
-            <div className="absolute bottom-2 right-2 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg text-lg">
-              🦋
-            </div>
           </div>
 
           {/*app name*/}

@@ -5,7 +5,7 @@ Alfie Staunton
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { ArrowLeft, MapPin, Plus, X, Pencil, Check, User, Bell, Shield, ChevronRight} from "lucide-react";
+import { ArrowLeft, MapPin, Plus, X, Pencil, Check, User, Bell, Shield, HelpCircle, ChevronRight} from "lucide-react";
 
 export default function Settings() {
   const navigate = useNavigate();
@@ -72,7 +72,7 @@ export default function Settings() {
   //add site
   const handleAddSite = async (e) => {
     if (e) e.preventDefault();
-    if (siteName.trim() || !isValidCoords(coordinates)) return;
+    if (!siteName.trim() || !isValidCoords(coordinates)) return;
 
     const [latitude, longitude] = coordinates
       .split(",")

@@ -36,7 +36,7 @@ const verifyToken = (req, res, next) => {
             FROM sites
             WHERE user_id = ?
             `;
-            const [sites] = await db.promise().query(query, [userId]);
+            const [sites] = await db.query(query, [userId]);
 
             res.status(200).json(sites );
         } catch (error) {
@@ -59,7 +59,7 @@ const verifyToken = (req, res, next) => {
             INSERT INTO sites (user_id, site_name, latitude, longitude)
             VALUES (?, ?, ?, ?)
             `;
-            const [result] = await db.promise().query(query, [userId, site_name, latitude, longitude]);
+            const [result] = await db.query(query, [userId, site_name, latitude, longitude]);
 
             res.status(201).json({ message: "Site added successfully",
                 siteId: result.insertId
@@ -81,7 +81,7 @@ const verifyToken = (req, res, next) => {
             DELETE FROM sites
             WHERE id = ? AND user_id = ?
             `;
-            await db.promise().query(query, [siteId, userId]);
+            await db.query(query, [siteId, userId]);
 
             res.status(200).json({ message: "Site deleted successfully" });
         } catch (error) {
