@@ -72,6 +72,12 @@ const handleIdentify = (speciesName) => {
         }
     };
 
+    const handlePrev = () => {
+        if (currentIndex > 0) {
+            setCurrentIndex(currentIndex - 1);
+        }
+    };
+
     //clear selection if user skips
     const handleSkip =() => {
         const updatedIds = { ...identifications};
@@ -212,8 +218,8 @@ const handleIdentify = (speciesName) => {
                 {/* continue */}
                 <button
                  onClick={handleNext}
-                 className={`flex-[2] py-3.5 px-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-sm transition-all &{
-                    hasSelectCount ? "bg-[#1a5c35] text-white hover:bg-[#134226]" : "bg-gray-800 text-white"
+                 className={`flex-[2] py-3.5 px-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-sm transition-all ${
+                    hasSelectCurrent ? "bg-[#1a5c35] text-white hover:bg-[#134226]" : "bg-gray-800 text-white"
                     }`}
                     >
                         {isLastPhoto ? "Continue" : "Next"}

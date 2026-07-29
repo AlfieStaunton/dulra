@@ -14,6 +14,9 @@ export default function SurveySiteOnboarding() {
   const [sites, setSites] = useState([]);
   const [showHelp, setShowHelp] = useState(false);
 
+  //Errors
+  
+
   //validate if coords are seperated by a comma
   const isValidCoords = (str) => {
     if (!str) return false;
@@ -47,26 +50,27 @@ export default function SurveySiteOnboarding() {
     e.preventDefault();
     if (!siteName.trim() || !isValidCoords(coordinates)) return;
 
-    const [latitude, longitude] = coordinates
-      .split(",")
-      .map((s) => parseFloat(s.trim()));
+    const [latString, lngString] = coordinates.split(",");
+      const latitude= parseFloat(latString.trim());
+      const longitude= parseFloat(lngString.trim());
 
     try {
       const token = localStorage.getItem("token");
+
+      const config = {
+        headers: { Authorization: `Bearer ${token}` }
+      };
 
       const response = await axios.post(
         "http://localhost:5000/api/sites",
         {
           site_name: siteName,
-          latitude,
-          longitude,
+          latitude: latitude,
+          longitude: longitude,
         },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        },
+        config
       );
+
       const newSite = {
         id: response.data.siteId,
         name: siteName,
