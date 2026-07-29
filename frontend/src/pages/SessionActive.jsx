@@ -365,7 +365,7 @@ export default function SessionActive() {
                 ref={videoRef}
                 autoPlay
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-contain"
               />
 
               {/* Viewfinder*/}
